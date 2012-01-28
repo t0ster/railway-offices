@@ -7,7 +7,7 @@
 # Places mark on map
 #
 placemark = (address, desc) ->
-  geocoder = new YMaps.Geocoder(address, {results: 1})
+  geocoder = new YMaps.Geocoder("Киев, #{address}", {results: 1})
   YMaps.Events.observe geocoder, geocoder.Events.Load, ->
     style = new YMaps.Style()
     style.hasHint = true
