@@ -17,7 +17,7 @@ placemark = (address, desc) ->
       point = geocoder.get(0).getGeoPoint()
       placemark = new YMaps.Placemark(point)
       placemark.name = address
-      placemark.description = desc
+      placemark.description = ("<p>#{l}</p>" for l in desc.split('\n')).join('')
       placemark.setStyle(style)
       map.addOverlay(placemark)
     else

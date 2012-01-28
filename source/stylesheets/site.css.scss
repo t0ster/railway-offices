@@ -8,7 +8,7 @@ $link-active-color:  false;
 $link-visited-color: false;
 
 $font-color:  #2a2a2a;
-$font-family: sans-serif;
+$font-family: lucida grande;
 $base-font-size:   12px;
 $base-line-height: 18px;
 
@@ -22,6 +22,7 @@ $side-gutter-width: $gutter-width;
 body {
   font-family: $font-family;
   color: $font-color;
+  background-color: #f0f0f0;
 }
 
 a {
@@ -31,9 +32,26 @@ a {
 #main {
   padding: 50px;
   @include container;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 24pt;
+  background-color: #41abff;
+  @include border-radius(10px);
+  color: white;
+  text-align: center;
+  padding: 0.2em;
+}
+
+.footer {
+  font-size: 12pt;
+  color: grey;
+  float: right;
 }
 
 #YMapsID {
   width: 100%;
   height: 600px;
+  margin-bottom: 1em;
 }
