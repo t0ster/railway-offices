@@ -23,6 +23,7 @@ body {
   font-family: $font-family;
   color: $font-color;
   background-color: #f0f0f0;
+  line-height: $base-line-height;
 }
 
 a {
@@ -41,13 +42,14 @@ h1 {
   @include border-radius(10px);
   color: white;
   text-align: center;
-  padding: 0.2em;
+  padding: 0.4em;
 }
 
 .footer {
-  font-size: 12pt;
+  font-size: 10pt;
   color: grey;
   float: right;
+  text-align: right;
 }
 
 #YMapsID {
