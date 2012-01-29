@@ -1,12 +1,13 @@
 #= require "jquery"
 #= require "underscore"
 #= require "data"
+@app = window.app ? {}
 
 
 #
 # Places mark on map
 #
-placemark = (address, desc) ->
+placemark = (map, address, desc) ->
   geocoder = new YMaps.Geocoder("Киев, #{address}", {results: 1})
   YMaps.Events.observe geocoder, geocoder.Events.Load, ->
     style = new YMaps.Style()
@@ -24,7 +25,7 @@ placemark = (address, desc) ->
       console.log "#{address} not found"
 
 
-$ ->
+jQuery ->
   # Init map
   map = new YMaps.Map(YMaps.jQuery("#YMapsID")[0])
   map.addControl(new YMaps.TypeControl())
@@ -37,6 +38,7 @@ $ ->
 
   # Placing marks
   for [address, desc] in TICKET_OFFICES
-    placemark(address, desc)
+    placemark(map, address, desc)
 
-  window.map = map
+  @app = window.app ? {}
+  @app.map = map
